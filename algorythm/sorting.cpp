@@ -26,6 +26,10 @@ void Sorting::start_sort(QString name_algorithms, const int *arr, int size)
     {
         SelectionSort(array,size);
     }
+    else if (name_algorithms=="Insertion sort")
+    {
+        InsertionSort(array,size);
+    }
 }
 
 void Sorting::BubbleSort(int *numbers,int size)
