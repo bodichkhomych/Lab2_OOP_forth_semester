@@ -63,5 +63,26 @@ int *Sorting::shuffle(int *arr, int size)
     return arr;
 }
 
+void Sorting::SelectionSort(int *arr, int size)
+{
+    for (int i=0;i<size-1;i++)
+    {
+        int min_pos=i;
+        for (int j=i+1;j<size;j++)
+        {
+            emit nextIteration(j,min_pos,0);
+            if (arr[j]<arr[min_pos])
+            {
+                min_pos=j;
+            }
+        }
+        if (min_pos>i)
+        {
+            emit nextIteration(i,min_pos,1);
+            swap(arr[i],arr[min_pos]);
+        }
+    }
+    emit nextIteration(-1,-1,0);
+}
 
 
