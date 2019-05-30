@@ -9,7 +9,24 @@ Sorting::Sorting()
 
 }
 
-
+void Sorting::start_sort(QString name_algorithms, const int *arr, int size)
+{
+    int *array=new int[static_cast<unsigned long long>(size)];
+    for (int i=0;i<size;i++)
+        array[i]=arr[i];
+    if (name_algorithms=="Bubble sort")
+    {
+        BubbleSort(array,size);
+    }
+    else if (name_algorithms=="Bogosort")
+    {
+        BogoSort(array,size);
+    }
+    else if (name_algorithms=="Selection sort")
+    {
+        SelectionSort(array,size);
+    }
+}
 
 void Sorting::BubbleSort(int *numbers,int size)
 {
@@ -84,5 +101,4 @@ void Sorting::SelectionSort(int *arr, int size)
     }
     emit nextIteration(-1,-1,0);
 }
-
 
