@@ -102,3 +102,20 @@ void Sorting::SelectionSort(int *arr, int size)
     emit nextIteration(-1,-1,0);
 }
 
+void Sorting::InsertionSort(int *arr, int size)
+{
+    for (int i=1;i<size;i++)
+    {
+        int cur=arr[i];
+        int j=i-1;
+        while (j>=0)
+        {
+            if (arr[j]<=cur) break;
+            arr[j+1]=arr[j];
+            emit nextIteration(j,j+1,1);
+            j--;
+        }
+        arr[j+1]=cur;
+    }
+    emit nextIteration(-1,-1,0);
+}
